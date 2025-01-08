@@ -13,6 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Alaxit</title>
+        <link rel="icon" href="/logo1.png" />
+      </head>
       <body>
         <Navbar />
         {children}

@@ -13,7 +13,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/logo.jpg" // Path to the image
+            src="/logo1.png" // Path to the image
             alt="Alaxit Logo"
             width={120} // Set the width
             height={24} // Set the height

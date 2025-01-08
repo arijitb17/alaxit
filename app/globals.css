@@ -1,9 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 /* Prevent horizontal scroll globally */
 html, body {
+  font-family: 'Courgette', serif;
+  font-size: large;
     overflow-x: hidden;
     width: 100%;
     .btn-hover:hover {

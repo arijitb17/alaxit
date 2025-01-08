@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Main: React.FC = () => {
   return (
@@ -8,8 +9,13 @@ const Main: React.FC = () => {
       <div className="container mx-auto px-4 md:px-24 grid grid-cols-1 md:grid-cols-2 gap-20">
         <div className="text-left text-white px-10">
           <p className="text-2xl md:text-4xl lg:text-7xl font-bold inter-var">
-            <span className="text-blue-500">alȧẋ</span>
-            <span className="text-gray-900">it</span>
+            <Image
+            src="/logo1.png"
+            alt='logo'
+            width={200}
+            height={200}>
+            </Image>
+           
           </p>
 
           <p className="text-base md:text-lg mt-4 text-gray-100 font-bold inter-var">

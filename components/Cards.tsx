@@ -21,7 +21,7 @@ export function Cards() {
     <div className="py-8">
       <Hr className="mb-10" />
       <div>
-        <h1 className="text-slate-800 text-4xl px-4 sm:px-10 mb-10 sm:mb-20">What we Offer</h1>
+        <h1 className="text-slate-800 text-4xl px-4 sm:px-10 mb-10 sm:mb-20 font-bold">What we Offer</h1>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 px-4 sm:px-8 text-slate-900">
         <div className="flex flex-col items-center justify-center">
