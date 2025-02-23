@@ -33,9 +33,9 @@ export default function AboutUs() {
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-start mt-8 md:mt-0 pl-2 sm:pl-20"> {/* Adjusted alignment */}
           <Image
-            src="/about.jpg"
+            src="/banner2.jpg"
             alt="Consultancy Team"
-            width={600}
+            width={500}
             height={400}
             className="rounded-lg shadow-xl"
           />

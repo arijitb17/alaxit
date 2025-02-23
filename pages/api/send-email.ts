@@ -8,10 +8,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   // Destructure the form data from the request body
-  const { name, email, message, gender, age, address, state, phone } = req.body;
+  const { name, email, message, phone } = req.body;
 
   // Validate that all fields are provided
-  if (!name || !email || !message || !gender || !age || !address || !state || !phone) {
+  if (!name || !email || !message || !phone) {
     return res.status(400).json({ message: 'All fields are required.' });
   }
 
@@ -29,23 +29,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     from: email,  // The sender's email
     to: process.env.HOST_EMAIL,  // Recipient email address
     subject: `New message from ${name}`,  // Email subject
-    text: `
-      You have received a new message from ${name} (${email}):
-      \n\n
-      Gender: ${gender}
-      \n
-      Age: ${age}
-      \n
-      Address: ${address}
-      \n
-      State: ${state}
-      \n
-      Phone: ${phone}
-      \n
-      Message:
-      \n
-      ${message}
-    `,  // Email body with all the form details
+    text: `You have received a new message from ${name} (${email}):
+    
+    Phone: ${phone}
+    
+    Message:
+    
+    ${message}`,
   };
 
   try {

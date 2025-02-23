@@ -10,25 +10,21 @@ const ContactForm: React.FC = () => {
     name: "",
     email: "",
     message: "",
-    gender: "",
-    age: "",
-    address: "",
-    state: "",
     phone: "",
   });
 
   const [status, setStatus] = useState<string>("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { name, email, message, gender, age, address, state, phone } = formData;
+    const { name, email, message, phone } = formData;
 
-    if (!name || !email || !message || !gender || !age || !address || !state || !phone) {
+    if (!name || !email || !message || !phone) {
       setStatus("Please fill in all fields.");
       toast.error("Please fill in all fields.");
       return;
@@ -48,10 +44,6 @@ const ContactForm: React.FC = () => {
           name: "",
           email: "",
           message: "",
-          gender: "",
-          age: "",
-          address: "",
-          state: "",
           phone: "",
         });
       } else {
@@ -63,16 +55,6 @@ const ContactForm: React.FC = () => {
       toast.error("An error occurred. Please try again.");
     }
   };
-
-  // Array of all Indian states
-  const states = [
-    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat",
-    "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh",
-    "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan",
-    "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal",
-    "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu", "Lakshadweep",
-    "Delhi", "Puducherry"
-  ];
 
   return (
     <div>
@@ -120,68 +102,6 @@ const ContactForm: React.FC = () => {
               placeholder="Enter your phone number"
               required
             />
-          </div>
-          
-          <div className="relative">
-            <label htmlFor="gender" className="text-lg font-medium text-gray-700 absolute left-4 top-0 transform -translate-y-6">Gender</label>
-            <select
-              id="gender"
-              name="gender"
-              value={formData.gender}
-              onChange={handleChange}
-              className="w-full p-4 rounded-2xl bg-gray-100 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-              required
-            >
-              <option value="">Select Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          
-          <div className="relative">
-            <label htmlFor="age" className="text-lg font-medium text-gray-700 absolute left-4 top-0 transform -translate-y-6">Age</label>
-            <input
-              type="number"
-              id="age"
-              name="age"
-              value={formData.age}
-              onChange={handleChange}
-              className="w-full p-4 rounded-2xl bg-gray-100 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-              placeholder="Enter your age"
-              required
-            />
-          </div>
-          
-          <div className="relative">
-            <label htmlFor="address" className="text-lg font-medium text-gray-700 absolute left-4 top-0 transform -translate-y-6">Address</label>
-            <textarea
-              id="address"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              className="w-full p-4 rounded-2xl bg-gray-100 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-              rows={3}
-              placeholder="Enter your address"
-              required
-            />
-          </div>
-          
-          <div className="relative">
-            <label htmlFor="state" className="text-lg font-medium text-gray-700 absolute left-4 top-0 transform -translate-y-6">State</label>
-            <select
-              id="state"
-              name="state"
-              value={formData.state}
-              onChange={handleChange}
-              className="w-full p-4 rounded-2xl bg-gray-100 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-              required
-            >
-              <option value="">Select State</option>
-              {states.map((state, index) => (
-                <option key={index} value={state}>{state}</option>
-              ))}
-            </select>
           </div>
 
           <div className="relative">
