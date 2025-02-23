@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <div className="relative w-full h-screen bg-cover bg-center p-8 bg-white">
+    <div className="relative w-full h-screen bg-cover bg-center p-6 bg-white mt-10">
       {/* Background overlay */}
       <div className="absolute inset-0 bg-white"></div>
 
